@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package user;
+
+message IdRequest {
+    string id = 1;
+}
+
+message UserResponse {
+    // 用户id
+    string id = 1;
+    // 用户名称
+    string name = 2;
+    // 用户性别
+    string gender = 3;
+}
+
+service User {
+    rpc getUser(IdRequest) returns(UserResponse);
+}
